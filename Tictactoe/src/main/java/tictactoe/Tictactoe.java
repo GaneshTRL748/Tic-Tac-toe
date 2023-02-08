@@ -67,9 +67,9 @@ public class Tictactoe {
 		}
 		
 	}
-	public void check(StringBuilder temp)
+	public void check(String temp)
 	{
-	     if(temp.equals("XXX"))
+		if(temp.equals("XXX"))
 	     {
 	    	 out.print("\nPlayer-1 Winner!!!!!");
 	    	 System.exit(0);
@@ -89,18 +89,28 @@ public class Tictactoe {
 			{
 				temp.append(this.arr[i][j]);
 			}
-			check(temp);
-			System.out.println(temp);
+			check(temp.toString());
 			temp.delete(0,temp.length());
 			for(int j=0;j<3;j++)
 			{
 				temp.append(this.arr[j][i]);
 			}
-			System.out.println(temp);
-			check(temp);
+			check(temp.toString());
 			temp.delete(0,temp.length());
 		}
-		
+		temp.delete(0,temp.length());
+		for(int i=0;i<3;i++)
+		{
+			temp.append(this.arr[i][i]);
+		}
+		check(temp.toString());
+		temp.delete(0,temp.length());
+		for(int i=0,j=2;i<3;i++,j--)
+		{
+			temp.append(this.arr[i][j]);
+		}
+		check(temp.toString());
+		temp.delete(0,temp.length());
 	}
 	public void  displayboard()
 	{
