@@ -7,46 +7,6 @@ import java.util.Scanner;
 public class Tictactoe {
 	static PrintStream out=new PrintStream(new FileOutputStream(FileDescriptor.out));
 	Scanner p=new Scanner(System.in);
-	public void position()
-	{
-		out.print("\nAvailable positions:");
-		if(this.arr[0][0]==' ')
-		{
-			out.print("1 ");
-		}
-		if(this.arr[0][1]==' ')
-		{
-			out.print("2 ");
-		}
-		if(this.arr[0][2]==' ')
-		{
-			out.print("3 ");
-		}
-		if(this.arr[1][0]==' ')
-		{
-			out.print("4 ");
-		}
-		if(this.arr[1][1]==' ')
-		{
-			out.print("5 ");
-		}
-		if(this.arr[1][2]==' ')
-		{
-			out.print("6 ");
-		}
-		if(this.arr[2][0]==' ')
-		{
-			out.print("7 ");
-		}
-		if(this.arr[2][1]==' ')
-		{
-			out.print("8 ");
-		}
-		if(this.arr[2][2]==' ')
-		{
-			out.print("9 ");
-		}
-	}
 	public void player1filling()
 	{
 		out.println("\nPlayer-1 Enter the position you want to fill:");
@@ -363,18 +323,14 @@ public class Tictactoe {
 	}
 	public void display(int choice)
 	{
-		switch(choice)
+		if(choice==1)
 		{
-					case 1:
-					{
-						out.println("OOPS this position Already Filled!!!!!!!");
-					    player1filling();
-					}
-					case 2:
-					{
-						out.println("OOPS this position Already Filled!!!!!!!");
-					    player2filling();
-					}
+			out.println("OOPS this position Already Filled!!!!!!!");
+		    player1filling();
+		}
+		else {
+			out.println("OOPS this position Already Filled!!!!!!!");
+		    player2filling();
 		}
 		
 	}
@@ -382,35 +338,26 @@ public class Tictactoe {
 	public static void main(String[] args) {
 		Tictactoe a1=new Tictactoe();
 		out.print("First player-X and second player player-O");
-		a1.position();
 		a1.player1filling();
 		a1.displayboard();
-		a1.position();
         a1.player2filling();
         a1.displayboard();
-        a1.position();
         a1.player1filling();
         a1.displayboard();
-        a1.position();
         a1.player2filling();
         a1.displayboard();
-        a1.position();
         a1.player1filling();
         a1.displayboard();
         a1.winnercheck();
-        a1.position();
         a1.player2filling();
         a1.displayboard();
         a1.winnercheck();
-        a1.position();
         a1.player1filling();
         a1.displayboard();
         a1.winnercheck();
-        a1.position();
         a1.player2filling();
         a1.displayboard();
         a1.winnercheck();
-        a1.position();
         a1.player1filling();
         a1.displayboard();
         a1.winnercheck();
