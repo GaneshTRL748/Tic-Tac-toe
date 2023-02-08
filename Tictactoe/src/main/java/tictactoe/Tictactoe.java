@@ -6,18 +6,19 @@ import java.io.PrintStream;
 import java.util.Scanner;
 public class Tictactoe {
 	static PrintStream out=new PrintStream(new FileOutputStream(FileDescriptor.out));
+	
 	public void playerfilling(int num,char fill)
 	{
 		if(num<4)
 		{
-			this.arr[num-num][num-1]=fill;
+			this.arr[(num-num)][(num-1)]=fill;
 		}
 		else if(num<7)
 		{
-			this.arr[num-(num-1)][num-4]=fill;
+			this.arr[(num-(num-1))][(num-4)]=fill;
 		}
 		else {
-			this.arr[num-(num-2)][num-7]=fill;
+			this.arr[(num-(num-2))][(num-7)]=fill;
 		}
 	}
 	public void check(String temp)
@@ -107,4 +108,5 @@ public class Tictactoe {
 		}
         out.print("\nMatch draw");
 	}
+
 }
