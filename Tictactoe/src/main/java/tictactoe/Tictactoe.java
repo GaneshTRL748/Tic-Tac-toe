@@ -7,9 +7,8 @@ import java.util.Scanner;
 public class Tictactoe {
 	static PrintStream out=new PrintStream(new FileOutputStream(FileDescriptor.out));
 	Scanner p=new Scanner(System.in);
-	public void player1filling()
+	public void playerfilling(char fill)
 	{
-		out.println("\nPlayer-1 Enter the position you want to fill:");
 		int temp=p.nextInt();
 		switch(temp)
 		{
@@ -17,10 +16,10 @@ public class Tictactoe {
 					{
 						if(this.arr[0][0]==' ')
 						{
-							this.arr[0][0]='X';
+							this.arr[0][0]=fill;
 						}
 						else {
-							  display(1);
+							  display(fill);
 						}
 						break;
 					}
@@ -29,10 +28,10 @@ public class Tictactoe {
 
 						if(this.arr[0][1]==' ')
 						{
-							this.arr[0][1]='X';
+							this.arr[0][1]=fill;
 						}
 						else {
-							  display(1);
+							  display(fill);
 						}
 						break;
 					}
@@ -40,10 +39,10 @@ public class Tictactoe {
 					{
 						if(this.arr[0][2]==' ')
 						{
-							this.arr[0][2]='X';
+							this.arr[0][2]=fill;
 						}
 						else {
-							  display(1);
+							  display(fill);
 						}
 						break;
 					}
@@ -51,10 +50,10 @@ public class Tictactoe {
 					{
 						if(this.arr[1][0]==' ')
 						{
-							this.arr[1][0]='X';
+							this.arr[1][0]=fill;
 						}
 						else {
-							  display(1);
+							  display(fill);
 						}
 						break;
 					}
@@ -62,10 +61,10 @@ public class Tictactoe {
 					{
 						if(this.arr[1][1]==' ')
 						{
-							this.arr[1][1]='X';
+							this.arr[1][1]=fill;
 						}
 						else {
-							  display(1);
+							  display(fill);
 						}
 						break;
 					}
@@ -73,10 +72,10 @@ public class Tictactoe {
 					{
 						if(this.arr[1][2]==' ')
 						{
-							this.arr[1][2]='X';
+							this.arr[1][2]=fill;
 						}
 						else {
-							  display(1);
+							  display(fill);
 						}
 						break;
 					}
@@ -85,10 +84,10 @@ public class Tictactoe {
 
 						if(this.arr[2][0]==' ')
 						{
-							this.arr[2][0]='X';
+							this.arr[2][0]=fill;
 						}
 						else {
-							  display(1);
+							  display(fill);
 						}
 						break;
 					}
@@ -96,10 +95,10 @@ public class Tictactoe {
 					{
 						if(this.arr[2][1]==' ')
 						{
-							this.arr[2][1]='X';
+							this.arr[2][1]=fill;
 						}
 						else {
-							  display(1);
+							  display(fill);
 						}
 						break;
 					}
@@ -107,10 +106,10 @@ public class Tictactoe {
 					{
 						if(this.arr[2][2]==' ')
 						{
-							this.arr[2][2]='X';
+							this.arr[2][2]=fill;
 						}
 						else {
-							  display(1);
+							  display(fill);
 						}
 						break;
 					}
@@ -121,120 +120,6 @@ public class Tictactoe {
 					}
 		}
 		
-	}
-	public void player2filling()
-	{
-		out.println("\nPlayer-2 Enter the position you want to fill:");
-		int temp=p.nextInt();
-		switch(temp)
-		{
-					case 1:
-					{
-						if(this.arr[0][0]==' ')
-						{
-							this.arr[0][0]='O';
-						}
-						else {
-							  display(2);
-						}
-						break;
-					}
-					case 2:
-					{
-
-						if(this.arr[0][1]==' ')
-						{
-							this.arr[0][1]='O';
-						}
-						else {
-							  display(2);
-						}
-						break;
-					}
-					case 3:
-					{
-						if(this.arr[0][2]==' ')
-						{
-							this.arr[0][2]='O';
-						}
-						else {
-							  display(2);
-						}
-						break;
-					}
-					case 4:
-					{
-						if(this.arr[1][0]==' ')
-						{
-							this.arr[1][0]='O';
-						}
-						else {
-							  display(2);
-						}
-						break;
-					}
-					case 5:
-					{
-						if(this.arr[1][1]==' ')
-						{
-							this.arr[1][1]='O';
-						}
-						else {
-							  display(2);
-						}
-						break;
-					}
-					case 6:
-					{
-						if(this.arr[1][2]==' ')
-						{
-							this.arr[1][2]='O';
-						}
-						else {
-							  display(2);
-						}
-						break;
-					}
-					case 7:
-					{
-
-						if(this.arr[2][0]==' ')
-						{
-							this.arr[2][0]='O';
-						}
-						else {
-							  display(2);
-						}
-						break;
-					}
-					case 8:
-					{
-						if(this.arr[2][1]==' ')
-						{
-							this.arr[2][1]='O';
-						}
-						else {
-							  display(2);
-						}
-						break;
-					}
-					case 9:
-					{
-						if(this.arr[2][2]==' ')
-						{
-							this.arr[2][2]='O';
-						}
-						else {
-							  display(2);
-						}
-						break;
-					}
-					default:
-					{
-						out.print("Invalid Choice!!!!");
-						break;
-					}
-		}
 	}
 	public void winnercheck()
 	{
@@ -321,46 +206,39 @@ public class Tictactoe {
 			out.print("\n|---|---|---|\n");
 		}
 	}
-	public void display(int choice)
+	public void display(char temp)
 	{
-		if(choice==1)
+		out.print("OOPs this position Already filled!!!!");
+		if(temp=='X')
 		{
-			out.println("OOPS this position Already Filled!!!!!!!");
-		    player1filling();
+			playerfilling('X');
 		}
 		else {
-			out.println("OOPS this position Already Filled!!!!!!!");
-		    player2filling();
+			playerfilling('O');
 		}
-		
 	}
     char[][] arr= {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
 	public static void main(String[] args) {
 		Tictactoe a1=new Tictactoe();
 		out.print("First player-X and second player player-O");
-		a1.player1filling();
-		a1.displayboard();
-        a1.player2filling();
-        a1.displayboard();
-        a1.player1filling();
-        a1.displayboard();
-        a1.player2filling();
-        a1.displayboard();
-        a1.player1filling();
-        a1.displayboard();
-        a1.winnercheck();
-        a1.player2filling();
-        a1.displayboard();
-        a1.winnercheck();
-        a1.player1filling();
-        a1.displayboard();
-        a1.winnercheck();
-        a1.player2filling();
-        a1.displayboard();
-        a1.winnercheck();
-        a1.player1filling();
-        a1.displayboard();
-        a1.winnercheck();
+		for(int i=1;i<=8;i++)
+		{
+			if(i%2==0)
+			{
+				out.println("\nPlayer-2 Enter the position you want to fill:");
+				a1.playerfilling('O');
+				a1.displayboard();
+			}
+			else {
+				out.println("\nPlayer-1 Enter the position you want to fill:");
+				a1.playerfilling('X');
+		        a1.displayboard();
+			}
+			if(i>4)
+			{
+				a1.winnercheck();
+			}
+		}
         out.print("\nMatch draw");
 	}
 
