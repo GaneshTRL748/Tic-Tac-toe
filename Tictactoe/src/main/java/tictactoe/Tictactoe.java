@@ -67,7 +67,7 @@ public class Tictactoe {
 		}
 		
 	}
-	public void check(String temp)
+	public void check(StringBuilder temp)
 	{
 	     if(temp.equals("XXX"))
 	     {
@@ -82,23 +82,23 @@ public class Tictactoe {
 	}
 	public void winnercheck()
 	{
-		String temp="";
+		StringBuilder temp=new StringBuilder();
 		for(int i=0;i<3;i++)
 		{
 			for(int j=0;j<3;j++)
 			{
-				temp=temp+(this.arr[i][j]);
+				temp.append(this.arr[i][j]);
 			}
 			check(temp);
 			System.out.println(temp);
-			temp="";
+			temp.delete(0,temp.length());
 			for(int j=0;j<3;j++)
 			{
-				temp=temp+Character.toString(this.arr[j][i]);
+				temp.append(this.arr[j][i]);
 			}
 			System.out.println(temp);
 			check(temp);
-			temp="";
+			temp.delete(0,temp.length());
 		}
 		
 	}
