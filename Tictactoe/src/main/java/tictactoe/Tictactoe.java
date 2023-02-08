@@ -67,70 +67,36 @@ public class Tictactoe {
 		}
 		
 	}
+	public void check(String temp)
+	{
+	     if(temp.equals("XXX"))
+	     {
+	    	 out.print("\nPlayer-1 Winner!!!!!");
+	    	 System.exit(0);
+	     }
+	     if(temp.equals("OOO"))
+	     {
+	    	 out.print("\nPlayer-2 Winner!!!!!");
+	    	 System.exit(0);
+	     }
+	}
 	public void winnercheck()
 	{
 		String temp=null;
-		for(int i=0;i<8;i++)
+		for(int i=0;i<3;i++)
 		{
-			switch(i)
+			for(int j=0;j<3;j++)
 			{
-							case 0:
-							{
-								temp=Character.toString(this.arr[0][0])+Character.toString(this.arr[0][1])+Character.toString(this.arr[0][2]);
-								break;
-							}
-							case 1:
-							{
-								temp=Character.toString(this.arr[1][0])+Character.toString(this.arr[1][1])+Character.toString(this.arr[1][2]);
-								break;
-							}
-							case 2:
-							{
-								temp=Character.toString(this.arr[2][0])+Character.toString(this.arr[2][1])+Character.toString(this.arr[2][2]);
-								break;
-							}
-							case 3:
-							{
-								temp=Character.toString(this.arr[0][0])+Character.toString(this.arr[1][0])+Character.toString(this.arr[2][0]);
-								break;
-							}
-							case 4:
-							{
-								temp=Character.toString(this.arr[0][1])+Character.toString(this.arr[1][1])+Character.toString(this.arr[2][1]);
-								break;
-							}
-							case 5:
-							{
-								temp=Character.toString(this.arr[0][2])+Character.toString(this.arr[1][2])+Character.toString(this.arr[2][2]);
-								break;
-							}
-							case 6:
-							{
-								temp=Character.toString(this.arr[0][0])+Character.toString(this.arr[1][1])+Character.toString(this.arr[2][2]);
-								break;
-							}
-							case 7:
-							{
-								temp=Character.toString(this.arr[0][2])+Character.toString(this.arr[1][1])+Character.toString(this.arr[2][0]);
-								break;
-							}
-							default:
-							{
-								break;
-							}
+				temp=temp+Character.toString(this.arr[i][j]);
 			}
-			if(temp.equals("XXX"))
+			check(temp.substring(4,temp.length()));
+			temp=null;
+			for(int j=0;j<3;j++)
 			{
-				out.println("\nPlayer-1 Winner\n");
-				displayboard();
-				System.exit(0);
+				temp=temp+Character.toString(this.arr[j][i]);
 			}
-			if(temp.equals("OOO"))
-			{
-				out.print("\nPlayer-2 Winner\n");
-				displayboard();
-				System.exit(0);
-			}
+			check(temp.substring(4,temp.length()));
+			temp=null;
 		}
 		
 	}
