@@ -14,103 +14,49 @@ public class Tictactoe {
 		{
 					case 1:
 					{
-						if(this.arr[0][0]==' ')
-						{
-							this.arr[0][0]=fill;
-						}
-						else {
-							  display(fill);
-						}
+						this.arr[0][0]=fill;
 						break;
 					}
 					case 2:
 					{
 
-						if(this.arr[0][1]==' ')
-						{
-							this.arr[0][1]=fill;
-						}
-						else {
-							  display(fill);
-						}
+						this.arr[0][1]=fill;
 						break;
 					}
 					case 3:
 					{
-						if(this.arr[0][2]==' ')
-						{
-							this.arr[0][2]=fill;
-						}
-						else {
-							  display(fill);
-						}
+						this.arr[0][2]=fill;
 						break;
 					}
 					case 4:
 					{
-						if(this.arr[1][0]==' ')
-						{
-							this.arr[1][0]=fill;
-						}
-						else {
-							  display(fill);
-						}
+						this.arr[1][0]=fill;
 						break;
 					}
 					case 5:
 					{
-						if(this.arr[1][1]==' ')
-						{
-							this.arr[1][1]=fill;
-						}
-						else {
-							  display(fill);
-						}
+						this.arr[1][1]=fill;
 						break;
 					}
 					case 6:
 					{
-						if(this.arr[1][2]==' ')
-						{
-							this.arr[1][2]=fill;
-						}
-						else {
-							  display(fill);
-						}
+						this.arr[1][2]=fill;
 						break;
 					}
 					case 7:
 					{
 
-						if(this.arr[2][0]==' ')
-						{
-							this.arr[2][0]=fill;
-						}
-						else {
-							  display(fill);
-						}
+						this.arr[2][0]=fill;
 						break;
 					}
 					case 8:
 					{
-						if(this.arr[2][1]==' ')
-						{
-							this.arr[2][1]=fill;
-						}
-						else {
-							  display(fill);
-						}
+						this.arr[2][1]=fill;
 						break;
 					}
 					case 9:
 					{
-						if(this.arr[2][2]==' ')
-						{
-							this.arr[2][2]=fill;
-						}
-						else {
-							  display(fill);
-						}
+						this.arr[2][2]=fill;
 						break;
 					}
 					default:
@@ -200,17 +146,6 @@ public class Tictactoe {
 			}
 			out.print("|");
 			out.print("\n|---|---|---|\n");
-		}
-	}
-	public void display(char temp)
-	{
-		out.print("OOPs this position Already filled!!!!");
-		if(temp=='X')
-		{
-			playerfilling('X');
-		}
-		else {
-			playerfilling('O');
 		}
 	}
     char[][] arr= {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
