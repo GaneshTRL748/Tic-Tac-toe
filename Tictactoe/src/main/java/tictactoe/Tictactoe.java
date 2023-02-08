@@ -82,21 +82,23 @@ public class Tictactoe {
 	}
 	public void winnercheck()
 	{
-		String temp=null;
+		String temp="";
 		for(int i=0;i<3;i++)
 		{
 			for(int j=0;j<3;j++)
 			{
-				temp=temp+Character.toString(this.arr[i][j]);
+				temp=temp+(this.arr[i][j]);
 			}
-			check(temp.substring(4,temp.length()));
-			temp=null;
+			check(temp);
+			System.out.println(temp);
+			temp="";
 			for(int j=0;j<3;j++)
 			{
 				temp=temp+Character.toString(this.arr[j][i]);
 			}
-			check(temp.substring(4,temp.length()));
-			temp=null;
+			System.out.println(temp);
+			check(temp);
+			temp="";
 		}
 		
 	}
