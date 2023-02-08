@@ -11,14 +11,14 @@ public class Tictactoe {
 	{
 		if(num<4)
 		{
-			this.arr[(num-num)][(num-1)]=fill;
+			this.arr[0][(num-1)]=fill;
 		}
 		else if(num<7)
 		{
-			this.arr[(num-(num-1))][(num-4)]=fill;
+			this.arr[1][(num-4)]=fill;
 		}
 		else {
-			this.arr[(num-(num-2))][(num-7)]=fill;
+			this.arr[2][(num-7)]=fill;
 		}
 	}
 	public void check(String temp)
