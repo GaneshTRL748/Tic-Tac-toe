@@ -6,20 +6,42 @@ import java.io.PrintStream;
 import java.util.Scanner;
 public class Tictactoe {
 	static PrintStream out=new PrintStream(new FileOutputStream(FileDescriptor.out));
-	
 	public void playerfilling(int num,char fill)
 	{
 		if(num<4)
 		{
-			this.arr[0][(num-1)]=fill;
+			if(this.arr[0][(num-1)]==' ') {
+			      this.arr[0][(num-1)]=fill;
+			   }
+			else {
+				alreadyfilled(fill);
+			}
 		}
 		else if(num<7)
 		{
-			this.arr[1][(num-4)]=fill;
+			if(this.arr[1][(num-4)]==' ') {
+				this.arr[1][(num-4)]=fill;
+			   }
+			else {
+				alreadyfilled(fill);
+			}
 		}
 		else {
-			this.arr[2][(num-7)]=fill;
+			if(this.arr[2][(num-7)]==' ') {
+				this.arr[2][(num-7)]=fill;
+			   }
+			else {
+				alreadyfilled(fill);
+			}
+			    
 		}
+	}
+	public void alreadyfilled(char fill) {
+		Scanner p=new Scanner(System.in);
+		out.print("This position is already filled!!!\nPlease enter the another position");
+		int temp=p.nextInt();
+		playerfilling(temp,fill);
+		
 	}
 	public void check(String temp)
 	{
@@ -82,11 +104,11 @@ public class Tictactoe {
 	}
     char[][] arr= {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
 	public static void main(String[] args) {
-		Scanner p=new Scanner(System.in);
+		Scanner p = new Scanner(System.in);
 		Tictactoe a1=new Tictactoe();
 		out.print("First player-X and second player player-O");
 		int num;
-		for(int i=1;i<=8;i++)
+		for(int i=1;i<10;i++)
 		{
 			if(i%2==0)
 			{
@@ -108,5 +130,4 @@ public class Tictactoe {
 		}
         out.print("\nMatch draw");
 	}
-
 }
