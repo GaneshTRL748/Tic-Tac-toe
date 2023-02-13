@@ -5,7 +5,7 @@ import java.io.PrintStream;
 import java.util.Scanner;
 public class Tictactoe{
 	static PrintStream out=new PrintStream(new FileOutputStream(FileDescriptor.out));
-	       char arr[][];
+	       char[][] arr;
 	       int dim;
 	       public void creategameboard()
 	       {
@@ -93,7 +93,7 @@ public class Tictactoe{
 	     {
 	    	 if(temp.equals("X".repeat(this.dim)))
 	    	 {
-	    		 out.print("Player1-Winner!!!!");;
+	    		 out.print("Player1-Winner!!!!");
 	    		 System.exit(0);
 	    	 }
 	    	 if(temp.equals("O".repeat(this.dim)))
@@ -107,7 +107,7 @@ public class Tictactoe{
             {
             	Tictactoe a1=new Tictactoe();
             	Scanner p=new Scanner(System.in);
-            	System.out.println("Enter the dimension:");
+                 out.print("Enter the dimension:\n");
             	a1.dim=p.nextInt();
             	a1.creategameboard();
             	for(int i=0;i<a1.dim*a1.dim;i++)
