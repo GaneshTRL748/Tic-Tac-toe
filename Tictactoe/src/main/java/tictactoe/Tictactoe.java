@@ -34,27 +34,39 @@ public class Tictactoe{
 	   	}
 	     public void playerfill(int num,char fill)
 	     {
-	    	 Scanner p=new Scanner(System.in);
 	    	  int x;
 	    	  int y;
-	    	 if(num%this.dim==0)
-	    	 {
-	    		  x=(num-1)/dim;
-	 	          y=dim-1;
-	    	 }
+	    	  int pos;
+	    	 if(num<=(this.dim*this.dim)) {
+				    	   if(num%this.dim==0)
+				    	 {
+				    		  x=(num-1)/dim;
+				 	          y=dim-1;
+				    	 }
+				    	 else {
+				    		  x=num/dim;
+				 	          y=(num%dim)-1;
+				    	 }
+				    	    fillposition(x,y,fill); 
+				    	 }
 	    	 else {
-	    		  x=num/dim;
-	 	          y=(num%dim)-1;
+	    		 out.println("Position number is greater than gameboard!!!!!!");
+	    		 pos=getnumber();
+	    		 playerfill(pos,fill);
 	    	 }
-	    	  if(this.arr[x][y]==' ')
+	      
+	     }
+	     public void fillposition(int x,int y,char fill)
+	     {
+	    	 if(this.arr[x][y]==' ')
 	    	  {
 	    		  this.arr[x][y]=fill;
 	    	  }
 	    	  else {
 	    		  out.print("\nOOPs this position is already filled");
 	    		  out.print("\nEnter the position:");
-	    		  int pos=p.nextInt();
-	    		  playerfill(pos,fill);
+	    		   int pos =getnumber();
+	    		   playerfill(pos,fill);
 	    	  }
 	     }
 	     public void winnercheck()
@@ -103,24 +115,37 @@ public class Tictactoe{
 	    	 }
 	    	 
 	     }
+	     public int getnumber()
+	     {
+	    	 Scanner p=new Scanner(System.in);
+	    	 int num;
+	    	 try {
+	    		 num=p.nextInt();
+	    		 return num;
+	    	 }
+	    	 catch(Exception e)
+	    	 {
+	    		 out.println("It be shoud number type");
+	    	    return getnumber();
+	    	 }
+	     }
             public  static void main(String[] args)
             {
             	Tictactoe a1=new Tictactoe();
-            	Scanner p=new Scanner(System.in);
-                 out.print("Enter the dimension:\n");
-            	a1.dim=p.nextInt();
+            	out.print("Tic tac toe Enter the Dimension\n");
+            	a1.dim=a1.getnumber();
             	a1.creategameboard();
             	for(int i=0;i<a1.dim*a1.dim;i++)
             	{
             	     out.print("Enter the position\n");
             	    if(i%2==0)
             	    {
-            	    	int num=p.nextInt();
-            	       a1.playerfill(num,'X');
-            	       a1.displayboard();
+            	    	 int num=a1.getnumber();
+            	         a1.playerfill(num,'X');
+            	         a1.displayboard();
             	    }
             	    else {
-            	    	int num=p.nextInt();
+            	    	int num=a1.getnumber();
             	    	a1.playerfill(num,'O');
             	    	a1.displayboard();
             	    }
@@ -130,5 +155,5 @@ public class Tictactoe{
             	    }
             	}
             	out.print("Match draw");
-            }
+}
 }
